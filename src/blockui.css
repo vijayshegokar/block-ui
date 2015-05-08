@@ -1,0 +1,165 @@
+.blockui.blockuiParent {
+	display: table;
+	height: 100%;
+	margin: 0 auto;
+	position: absolute;
+	text-align: center;
+	top: 0;
+	width: 100%;
+	z-index: 1004;
+}
+
+.blockui.blockuiEParent {
+	display: table;
+    height: 100%;
+   	margin: 0 auto;
+    padding: 0;
+    position: absolute;
+    text-align: center;
+    top: auto;
+    width: 100%;
+}
+
+.blockui.darkBg {
+	background:
+		url("images/black-transparent.png") repeat
+		scroll 0 0 rgba(0, 0, 0, 0);
+	bottom: 0;
+    cursor: wait;
+    display: block;
+    height: 100%;
+    left: 0;
+    margin: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.blockui.darkEBg {
+	background:
+		url("images/black-transparent.png") repeat
+		scroll 0 0 rgba(0, 0, 0, 0);
+    cursor: wait;
+    display: block;
+    height: 100%;
+    left: 0;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.blockui.blockuiContent {
+	color: white;
+	display: table-cell;
+    margin: 0 auto;
+    text-align: center;
+    vertical-align: middle;
+    z-index: 2;
+}
+
+.blockui.blockuiEContent {
+    display: table-cell;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+    vertical-align: middle;
+    width: auto;
+}
+
+.blockui.blockuiContent div {
+	display: inline-block;
+	margin: 0 auto;
+    position: relative;
+    width: auto;
+    z-index: 2;
+}
+
+.blockui.blockuiEContent div {
+	display: inline-block;
+    margin: 0 auto;
+    position: relative;
+    width: auto;
+    z-index: 2;
+}
+
+.blockui.messageParent {
+	background-color: black;
+	padding: 5px 20px;
+	position: relative;
+	text-align: center;
+	width: auto;
+	z-index: 10000;
+}
+
+.blockui.messageEParent {
+	background-color: black;
+	padding: 5px 20px;
+	position: relative;
+	text-align: center;
+	width: auto;
+	z-index: 10000;
+}
+
+.blockui.message {
+	
+}
+
+.blockui.loaderParent {
+	text-align: center;
+}
+
+.blockui.loaderEParent {
+	text-align: center;
+}
+
+.blockui.messageParent, .blockui.loaderParent {
+	color: white;
+}
+
+.blockui.messageEParent, .blockui.loaderEParent {
+	color: white;
+}
+
+.blockui.loaderIcon {
+	height: auto;
+	width: auto;
+}
+
+.blockui.loaderEIcon {
+	height: auto;
+	width: auto;
+}
+
+@media ( max-width : 480px) {
+	.blockui.blockuiContent div {
+		max-width: 80%;
+		width: auto;
+	}
+	.blockui.blockuiEContent div {
+		max-width: 80%;
+		width: auto;
+	}
+}
+
+/** custom css **/
+.blockui.messageParent.messageParent_C, .blockui.messageEParent.messageParent_C {
+	/*Your custom css here for message parent div*/
+}
+
+.blockui.messageParent.messageParent_CWL, .blockui.messageEParent.messageParent_CWL {
+	/*Your custom css here for message parent div with loader*/
+}
+
+.blockui.loaderParent_C, .blockui.loaderEParent_C {
+	/*Your custom css here for loader parent div*/
+}
+.blockui.loaderIcon, .blockui.loaderEIcon {
+	/*Your custom css here for loader icon div*/
+	background-color: white;
+    padding: 10px;
+}

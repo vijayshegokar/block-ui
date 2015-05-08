@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Demo</title>
+	<!-- Block UI CSS -->
+	<link type="text/css" rel="stylesheet" href="blockui.css" />
+	<!-- Block UI JS -->
+    <script type="text/javascript" src="blockui.js"></script>
+	<script type="text/javascript">
+	function startBlockUI(i) {
+		if(i === 0) {
+			document.getElementById("text").innerHTML = "Blocking ui with loader only.";
+			console.log("Blockin ui with loader only.");
+			blockUI();
+			timeout = false;
+			setTimeout(function() {
+		    	unblockUI();
+		    	document.getElementById("text").innerHTML = "";
+		    	setTimeout(function() {
+			    	startBlockUI(1);
+			    }, 1000)
+		    }, 2000)
+		}
+		if(i === 1) {
+			document.getElementById("text").innerHTML = "Blocking ui with message only.";
+			console.log("Blockin ui with message only.");
+			blockUIWIthMsg(null, "Please wait! We are processing your request!");
+			timeout = false;
+			setTimeout(function() {
+		    	unblockUI();
+		    	document.getElementById("text").innerHTML = "";
+		    	setTimeout(function() {
+			    	startBlockUI(2);
+			    }, 1000)
+		    }, 2000)
+		}
+		if(i === 2) {
+			document.getElementById("text").innerHTML = "Blocking ui with loader and message.";
+			console.log("Blockin ui with loader and message.");
+			blockUIWithLoaderNMsg(null, "Please Wait...");
+			timeout = false;
+			setTimeout(function(){
+		    	unblockUI();
+		    	document.getElementById("text").innerHTML = "";
+		    	setTimeout(function() {
+			    	startBlockUI(3);
+			    }, 1000)
+		    }, 2000)
+		}
+		if(i === 3) {
+			document.getElementById("text").innerHTML = "Blocking ui with simple dark background.";
+			console.log("Blockin ui with simple dark background.");
+			blockUIOnly();
+			timeout = false;
+			setTimeout(function(){
+		    	unblockUI();
+		    	document.getElementById("text").innerHTML = "";
+		    	setTimeout(function() {
+			    	startBlockUI(0);
+			    }, 1000)
+		    }, 2000)
+		}
+	}
+	</script>
+</head>
+<body onload="startBlockUI(0);">
+<div style="text-align: center; margin: 0 auto; top: 100px;">
+	<h3 id="text"></h3>
+</div>	
+</body>
+</html>
