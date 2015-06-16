@@ -3,7 +3,8 @@
  * 
  * @author Vijay Shegokar
  * @version 1.0
- * @date 07-May-2015
+ * @create_date 07-May-2015
+ * @updated_date 08-May-2015
  * 
  * My purpose of creating this library to help HTML and Frontend developers to
  * block ui while waiting for some ajax call response or user wants to block ui
