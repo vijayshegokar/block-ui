@@ -132,7 +132,7 @@ BlockUI.prototype.addBlockHTML = function() {
 	blockuiParent.appendChild(blockuiContent);
 	this.area.appendChild(blockuiParent);
 	if(this.elementBlock) {
-		this.centerEFixed(blockuiParent, this.area);
+		centerEFixed(blockuiParent, this.area);
 		//this.centerFixed(blockuiContent, blockuiParent);
 	} else {
 		this.centerFixed(blockuiParent);
@@ -212,10 +212,6 @@ BlockUI.prototype.removeLoader = function() {
 	delete deletingLoader;
 }
 
-/**
- * To set the pop-up position in center of a page by setting popup position fixed, this function can be used.
- * call on popup.
- */
 BlockUI.prototype.centerFixed = function(element, container) {
 	if(!container)
 		container = window;
@@ -225,7 +221,7 @@ BlockUI.prototype.centerFixed = function(element, container) {
 	return element;
 }
 
-BlockUI.prototype.centerEFixed = function(element, container) {
+function centerEFixed(element, container) {
 	element.style.position = "absolute";
 	element.style.top = container.offsetTop + "px";
 	element.style.left = container.offsetLeft + "px";
@@ -237,7 +233,7 @@ BlockUI.prototype.centerEFixed = function(element, container) {
 /* Custom functions are created to use it in an easy way*/
 // An anonymous function to load image while page load, to avoid loading time while first time block ui will called.
 (function() {
-	var loaderImgPath = "images/loader.gif";
+	var loaderImgPath = "../src/images/loader.gif";
 	var loaderImg = new Image;
 	loaderImg.src = loaderImgPath;
 	loaderImg.onload = function() {}
@@ -264,7 +260,7 @@ function blockUIWIthMsg(area, msg) {
 function blockUIWithLoader(area) {
 	return $b.blockUI({
 		area: area,
-		loaderIconHtml : "<img src='images/loader.gif' class='blockui loaderIcon loaderIcon_C'/>"
+		loaderIconHtml : "<img src='../src/images/loader.gif' class='blockui loaderIcon loaderIcon_C'/>"
 	});
 }
 
@@ -273,7 +269,7 @@ function blockUIWithLoaderNMsg(area, msg) {
 		area: area,
 		msgParentCssClass : "messageParent_CWL",
 		blockMsgHtml : "<div>" + msg + "</div>",
-		loaderIconHtml : "<img src='images/loader.gif' class='blockui loaderIcon loaderIcon_C'/>"
+		loaderIconHtml : "<img src='../src/images/loader.gif' class='blockui loaderIcon loaderIcon_C'/>"
 	});
 }
 

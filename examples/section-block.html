@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Demo</title>
+<title>Section Block Demo</title>
 	<!-- Block UI CSS -->
-	<link type="text/css" rel="stylesheet" href="blockui.css" />
+	<link type="text/css" rel="stylesheet" href="../src/blockui.css" />
 	<!-- Block UI JS -->
-    <script type="text/javascript" src="blockui.js"></script>
+    <script type="text/javascript" src="../src/blockui.js"></script>
 	<script type="text/javascript">
+	function blockMe(eleId) {
+		var blockInstance = blockUI(eleId);
+		timeout = false;
+		setTimeout(function() {
+	    	unblockUI(blockInstance);
+	    }, 2000)
+	}
 	function startBlockUI(i) {
 		if(i === 0) {
 			document.getElementById("text").innerHTML = "Blocking ui with loader only.";
@@ -62,10 +69,36 @@
 		}
 	}
 	</script>
+	<style type="text/css">
+	.middle {
+		padding: 10px 30px;
+		width: 100%;
+		position: relative;
+		height: 800px;
+		margin: 0 auto;
+	}
+	#firstDiv {
+		width: 50%;
+		height: 400px;
+		float: left;
+	}
+	#secondDiv {
+		width: 50%;
+		height: 400px;
+		float: left;
+	}
+	</style>
 </head>
-<body onload="startBlockUI(0);">
-<div style="text-align: center; margin: 0 auto; top: 100px;">
-	<h3 id="text"></h3>
+<body>
+<div class="middle">
+	<div id="firstDiv">
+		First Div
+		<button onclick="blockMe('firstDiv');">Click Me to Block</button>
+	</div>
+	<div id="secondDiv">
+		Second Div
+		<button onclick="blockMe('secondDiv');">Click Me to Block</button>
+	</div>
 </div>	
 </body>
 </html>
